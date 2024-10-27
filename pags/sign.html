@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en" id="myP">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QUIKVOTE</title>
+    <link rel="shortcut icon" type="imagex/" href="/img/globe.png">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-image: linear-gradient(to right, rgb(240, 248, 255), rgb(194, 199, 202), rgb(125, 57, 189), rgb(138, 43, 226), rgb(106, 33, 173));
+            font-family: 'Comfortaa', cursive;
+        }
+
+        .arrow img {
+           width: 30px;
+           margin: 30px 30px;
+        }
+
+
+        .box {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(0, 0, 0, 0.6);
+            padding: 15px;
+            border-radius: 15px;
+            width: 30%;
+            color: aliceblue;
+            margin-top: 40px;
+        }
+
+        fieldset {
+            border: 3px solid rgb(138, 43, 226);
+        }
+
+        legend {
+            border: 1px solid blueviolet;
+            padding: 10px;
+            text-align: center;
+            background-color: blueviolet;
+            border-radius: 8px;
+            
+        }
+
+        .inputbox {
+            position: relative;
+        }
+
+        .inputUser {
+            background: none;
+            border: none;
+            border-bottom: 1px solid aliceblue;
+            outline: none;
+            color: aliceblue;
+            font-size: 15px;
+            width: 100%;
+            letter-spacing: 2px;
+        }
+
+        .label {
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            pointer-events: none;
+            transition: .5s;
+        }
+
+        .inputUser:focus ~ .label, .inputUser:valid  ~ .label {
+
+            top: -15px;
+            font-size: 14px;
+            color: blueviolet;
+        }
+
+        #data_nascimento {
+            border: none;
+            padding: 8px;
+            border-radius: 10px;
+            outline: none;
+            font-size: 15px;
+        }
+
+        #submit {
+            background-image: linear-gradient(to right, rgb(179, 3, 233), rgb(143, 2, 185), rgb(135, 3, 175) );
+            width: 100%;
+            border: none;
+            color: aliceblue;
+            padding: 15px;
+            font-size: 19px;
+            cursor: pointer;
+            border-radius: 10px;
+        }
+
+        #submit:hover {
+            background-image: linear-gradient(to right, rgb(145, 0, 189), rgb(119, 1, 155), rgb(102, 0, 133) );
+        }
+
+        #opcoes {
+            width: 120px;
+            border: none;
+            background: scroll;
+            font-size: 15px;
+            color: rgb(240, 248, 255);
+            background-color: rgba(0, 0, 0, 0.4); ;
+            border-radius: 5px;
+            padding: 10px;
+        }
+
+        #option {
+            background-color: rgba(0, 0, 0, 0.8);
+            border-bottom-left-radius: 5px ;
+            border-bottom-right-radius: 5px ;
+        }
+    </style>
+</head>
+<body>
+    
+    <a class="arrow" href="/index.html"><img src="../img/arrow-left.png" alt=""></a>
+
+    <div class="box">
+        <form action="../index.html?auth">
+            <fieldset><legend><b>Formulário de Cadastro</b></legend>
+                <br>
+            <div class="inputbox">
+                <input type="text" name="name" id="name" class="inputUser" required>
+                <label for="name" class="label">Nome Completo</label>
+            </div>
+            <br><br>
+            <div class="inputbox">
+                <input type="text" name="email" id="email" class="inputUser" required>
+                <label for="email" class="label">E-mail</label>
+            </div>
+            <br><br>
+            <div class="inputbox">
+                <input type="password" name="senha" id="senha" class="inputUser" required>
+                <label for="senha" class="label">Senha</label>
+            </div>
+            <br><br>
+            <label for="opcoes">Sexo:</label>
+                <select id="opcoes" name="opcoes" required>
+    
+                    <option id="option" value="opcao1">Selecionar</option>
+            
+                    <option id="option" value="opcao2">Masculino</option>
+            
+                    <option id="option" value="opcao3">Feminino</option>
+            
+                    <option id="option" value="opcao4">Outro</option>
+                </select>
+                <br><br>
+                
+                <label for="data_nascimento"><b>Data de Nascimento:</b></label>
+                <input type="date" name="data_nascimento" id="data_nascimento"  required>
+                
+                <br><br>
+                <div class="inputbox">
+                    <input type="text" name="cidade" id="cidade" class="inputUser" required>
+                    <label for="cidade" class="label">Cidade</label>
+                </div>
+                <br><br>
+                <div class="inputbox">
+                    <input type="text" name="estado" id="estado" class="inputUser" required>
+                    <label for="estado" class="label">Estado</label>
+                </div>
+                <br><br>
+                <div class="inputbox">
+                    <input type="text" name="endereco" id="endereco" class="inputUser" required>
+                    <label for="endereco" class="label">Endereço</label>
+                </div>
+                <br><br>
+                <a href="login.html" style="text-decoration: none; color: rgb(27, 27, 255);">Ja posusi uma Conta? Entrar</a>
+                <br><br>
+                <input type="submit" name="submit" id="submit" value="Cadastrar">
+    
+            </fieldset>
+        </form>
+    </div>
+        
+        
+
+</body>
+</html>
